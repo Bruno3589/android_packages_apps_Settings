@@ -93,5 +93,28 @@
     <string name="share_xos_summary">Let others know about halogenOS</string>
     <string name="share_message">Check out what #halogenOS is all about @ http://halogenOS.org/</string>
     <string name="share_chooser_title">Share halogenOS</string>
+    
+    <!-- Modern services -->
+    <string name="modern_services_title">Modern Services</string>
+    <string name="modern_services_summary">Enable some exclusive modern services</string>
+    <string name="modern_services_cleardata">
+        You may need to clear the data of Google and Google Photos app for this setting to take effect
+    </string>
+        
+    <!-- Developer options -> Disable dropbox -->
+    <string name="debug_disable_dropbox_title">Disable dropbox</string>
+    <string name="debug_disable_dropbox_summary">
+        Prevent the system from adding debug logs of exceptions to the dropbox.
+        This does not affect Logcat and other logging mechanisms.
+        This setting is NOT related to the cloud service Dropbox!
+    </string>
+    
+    <string name="xos_version">halogenOS version</string>
+    
+     <!-- [CHAR LIMIT=100] Notification Importance slider: very low importance level description -->
+    <string name="notification_importance_very_low">No full screen interruption, peeking, sound, or vibration. Show at the bottom of the notification list. Hide from lock screen.</string>
+    
+     <!-- Camera sound switch -->
+     <string name="camera_sounds_title">Camera shutter sound</string>
  
 </resources>

@@ -77,6 +77,13 @@
                 android:shouldDisableView="false"
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
+        
+        <Preference
+                android:key="mod_version"
+                android:enabled="false"
+                android:shouldDisableView="false"
+                android:title="@string/xos_version"
+                android:summary="@string/device_info_default" />
 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"
@@ -99,12 +106,6 @@
                 android:title="@string/fcc_equipment_id"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Device MBN version -->
-        <Preference android:key="mbn_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mbn_version"
-                android:summary="@string/device_info_default"/>
-
         <!-- Device Baseband version -->
         <Preference android:key="baseband_version"
                 android:enabled="false"
@@ -118,6 +119,13 @@
                 android:shouldDisableView="false"
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
+
+        <!-- Build date -->
+        <Preference android:key="build_date"
+                android:enabled="false"
+                android:shouldDisableView="false"
+                android:title="@string/build_date"
+                android:summary="@string/build_date_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"

@@ -38,6 +38,11 @@
         android:title="@string/keep_screen_on"
         android:summary="@string/keep_screen_on_summary"
         settings:useAdditionalSummary="true" />
+    
+    <SwitchPreference
+        android:key="modern_services"
+        android:title="@string/modern_services_title"
+        android:summary="@string/modern_services_summary" />
 
     <ListPreference
         android:key="hdcp_checking"
@@ -366,6 +371,11 @@
         <Preference
                 android:key="inactive_apps"
                 android:title="@string/inactive_apps_title" />
+        
+        <SwitchPreference
+            android:key="disable_dropbox"
+            android:title="@string/debug_disable_dropbox_title"
+            android:summary="@string/debug_disable_dropbox_summary" />
 
         <SwitchPreference
             android:key="force_allow_on_external"

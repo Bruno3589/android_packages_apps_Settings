@@ -205,6 +205,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private static final String KEY_CONVERT_FBE = "convert_to_file_encryption";
 
     private static final String OTA_DISABLE_AUTOMATIC_UPDATE_KEY = "ota_disable_automatic_update";
+    
+    private static final String KEY_ENABLE_MODERN_SERVICES = "modern_services",
+                                KEY_DISABLE_DROPBOX        = "disable_dropbox";
 
     private static final int RESULT_DEBUG_APP = 1000;
     private static final int RESULT_MOCK_LOCATION_APP = 1001;
@@ -299,6 +302,9 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private SwitchPreference mForceResizable;
 
     private SwitchPreference mColorTemperaturePreference;
+    
+    private SwitchPreference mEnableModernServicesPreference,
+                             mDisableDropboxPreference;
 
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
@@ -496,6 +502,19 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             removePreference(COLOR_TEMPERATURE_KEY);
             mColorTemperaturePreference = null;
         }
+        
+        mEnableModernServicesPreference = (SwitchPreference)
+                    findPreference(KEY_ENABLE_MODERN_SERVICES);
+        mEnableModernServicesPreference.setOnPreferenceChangeListener(this);
+        mEnableModernServicesPreference.setChecked(
+            SystemProperties.get("sf.enable_modern_services").equals("1"));
+
+        mDisableDropboxPreference = (SwitchPreference)
+                    findPreference(KEY_DISABLE_DROPBOX);
+        mDisableDropboxPreference.setOnPreferenceChangeListener(this);
+        mDisableDropboxPreference.setChecked(
+            Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.DISABLE_DROPBOX, 0) == 1);
     }
 
     private ListPreference addListPreference(String prefKey) {
@@ -2008,6 +2027,18 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             return true;
         } else if (preference == mSimulateColorSpace) {
             writeSimulateColorSpace(newValue);
+            return true;
+        } else if (preference == mEnableModernServicesPreference) {
+            SystemProperties.set("sf.enable_modern_services",
+                        (boolean)newValue ? "1" : "0");
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.ENABLE_MODERN_SERVICES, (boolean)newValue ? 1 : 0);
+            Toast.makeText(getActivity(), R.string.modern_services_cleardata,
+                    Toast.LENGTH_LONG).show();
+            return true;
+        } else if (preference == mDisableDropboxPreference) {
+            Settings.Secure.putInt(getContentResolver(),
+                Settings.Secure.DISABLE_DROPBOX, (boolean)newValue ? 1 : 0);
             return true;
         }
         return false;

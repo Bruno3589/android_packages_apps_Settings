@@ -87,5 +87,27 @@
     <string name="share_xos_summary">Lasse andere über halogenOS erfahren</string>
     <string name="share_message">Erfahre, was #halogenOS so ist auf http://halogenOS.org/</string>
     <string name="share_chooser_title">@string/share_xos_title</string>
+    
+    <!-- Modern services -->
+    <string name="modern_services_title">Moderne Dienste</string>
+    <string name="modern_services_summary">Aktiviert einige moderne Dienste</string>
+    <string name="modern_services_cleardata">
+        Evtl. müssen die Daten der Google- und Google Fotos-App gelöscht werden, um die Änderungen zu übernehmen
+    </string>
+    
+    <!-- Developer options -> Disable dropbox -->
+    <string name="debug_disable_dropbox_title">Deaktiviere dropbox</string>
+    <string name="debug_disable_dropbox_summary">
+        Verhindert, dass das System Log-Dateien zu Fehlern/Abstürzen in die Dropbox wirft.
+        Dies hat keine Auswirkung auf Logcat und andere Logging-Mechanismen.
+        Diese Einstellung hat NICHTS mit dem Cloud-Dienst Dropbox zu tun!
+    </string>
+
+    <string name="build_date">Build-Datum</string>
+    
+    <string name="xos_version">halogenOS-Version</string>
+    
+     <!-- Camera sound switch -->
+     <string name="camera_sounds_title">Kamera-Knips-Sound</string>
 
 </resources>
